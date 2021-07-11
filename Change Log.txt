@@ -1,0 +1,17 @@
+frmMandel:
+
+TODO: Add capability to change color schemes
+
+TODO: Add capability to change base colors
+
+
+
+UpDownDialog:
+
+Added Minimum set Property
+
+
+
+ImaginaryPlane:
+
+***Added ColorScheme get/set property***

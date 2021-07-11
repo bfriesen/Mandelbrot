@@ -1,0 +1,12 @@
+Original, unmodified benchmark:
+56640	56765	56859	56532		avg = 56699
+
+This is the time it takes to draw the default size window from a range of -.1, 1, -.1, 1.  All test use this.
+
+13446 < best average so far, 23.7% of original
+
+Ideas for increasing speed:
+
+Have an array of Points that changes only when the form is resized.  This will keep from having to go through a double loop.
+
+when moving or resizing, calculate all FractalPoint up front, store in hashtable with the points from the above array as the hash

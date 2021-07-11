@@ -1,0 +1,57 @@
+frmMandel:
+
+Rename Form1.cs to frmMandel.cs
+
+Remove unused method public void setClickMode(int clickMode)
+
+Remove unused method public int getClickMode()
+
+Remove unused method public void setZoomFactor(int zoomFactor)
+
+Remove unused method public void setZoomFactor(int zoomFactor)
+
+Remove unused method public void setMaxIterations(int maxIterations)
+
+Remove empty method event handler private void picBox_Click(object sender, System.EventArgs e)
+
+Remove empty method event handler private void mnuContext_Popup(object sender, System.EventArgs e)
+
+Remove empty else if from private void picBoxMouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+
+Remove event handlers private void formActivated(object sender, System.EventArgs e)
+	and private void formPaint(object sender, System.Windows.Forms.PaintEventArgs e)
+	Replace with protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+
+Extract Method for ThreadStart to ImaginaryPlane.paint
+	Move method in ImaginaryPlane contents of ImaginaryPlane.paint to paintThread()
+	
+Added event handler for pic box paint event, put ImaginaryPlane.paint method
+	Remove OnPaint method, not necessary any more
+
+Removed member object ImaginaryPlaneRange range
+	temporarily changed values in constructor to 20's (from 2's) -- makes testing faster
+
+Remove redundent ThreadStart algorithm from frmMandel for ImaginaryPlane.drawMandelbrot() in:
+	private void setMaxIterationsClicked(object sender, System.EventArgs e)
+	
+
+TODO: remove Timer object by checking cursor object <-- bleh, not gonna happen
+
+Completely move ImaginaryPlaneRange object to ImaginaryPlane (no mention of it in frmMandel)
+
+Change Capatalization scheme (yeah, yeah, just cosmetic)
+
+Expose progressbar/picbox with get properties (will use soon in ImaginaryPlane)
+
+Move ClickMode constants to enum, have ImaginaryPlane take care of 'em
+
+
+
+ImaginaryPlane:
+
+Remove unused constructor
+
+Remove ImaginaryPlaneRange argument in constructor, add default range instead
+
+Add new constructor with MandelbrotForm object, delete existing constructor, change references
+
